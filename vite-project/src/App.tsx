@@ -155,23 +155,10 @@ const App = () => {
     }
   };
 
-  const validateOccupation = (occupation: string) => {
-    switch (true) {
-      case occupation.length === 0 || occupation === undefined:
-        return "Occupation is required";
-      default:
-        return "";
-    }
-  };
+  const validateOccupation = (occupation: string) =>
+    occupation ? "" : "Occupation is required";
 
-  const validateState = (state: string) => {
-    switch (true) {
-      case state.length === 0 || state === undefined:
-        return "State is required";
-      default:
-        return "";
-    }
-  };
+  const validateState = (state: string) => (state ? "" : "State is required");
 
   return (
     <div className="appContainer">
