@@ -15,7 +15,7 @@ const App = () => {
     occupation: "",
     state: "",
   });
-  const [errorHandler, setErrorHandler] = useState<{
+  const [errors, setErrors] = useState<{
     nameError?: string;
     emailError?: string;
     passwordError?: string;
@@ -42,10 +42,12 @@ const App = () => {
       stateError: validateState(formData.state),
     };
 
-    setErrorHandler(formValidationState);
+    setErrors(formValidationState);
 
     if (
-      Object.values(formValidationState).some((errorMessage) => errorMessage !== "")
+      Object.values(formValidationState).some(
+        (errorMessage) => errorMessage !== ""
+      )
     ) {
       return;
     } else {
@@ -57,7 +59,9 @@ const App = () => {
         setIsSubmitted(true);
       } catch (error) {
         console.log(error);
-        alert('There was an error submitting the form. Please try again later.')
+        alert(
+          "There was an error submitting the form. Please try again later."
+        );
       }
     }
   };
@@ -83,7 +87,7 @@ const App = () => {
 
     const errorMessage = validationFunctions[name](value);
 
-    setErrorHandler((prevState) => ({
+    setErrors((prevState) => ({
       ...prevState,
       [name + "Error"]: errorMessage,
     }));
@@ -188,7 +192,7 @@ const App = () => {
             placeholder="full name"
           />
           <span id="errorName" className="error">
-            {errorHandler.nameError}
+            {errors.nameError}
           </span>
           <input
             type="email"
@@ -201,7 +205,7 @@ const App = () => {
             placeholder="email"
           />
           <span id="errorEmail" className="error">
-            {errorHandler.emailError}
+            {errors.emailError}
           </span>
           <div className="password-container">
             <input
@@ -223,7 +227,7 @@ const App = () => {
             </button>
           </div>
           <span id="errorPassword" className="error">
-            {errorHandler.passwordError}
+            {errors.passwordError}
           </span>
 
           <select
@@ -242,7 +246,7 @@ const App = () => {
             ))}
           </select>
           <span id="errorState" className="error">
-            {errorHandler.stateError}
+            {errors.stateError}
           </span>
 
           <select
@@ -261,13 +265,10 @@ const App = () => {
             ))}
           </select>
           <span id="errorOccupation" className="error">
-            {errorHandler.occupationError}
+            {errors.occupationError}
           </span>
 
-          <button
-            className="btn"
-            type="submit"
-          >
+          <button className="btn" type="submit">
             Submit
           </button>
         </form>
