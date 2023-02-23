@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: #00539cff;
+}
+
+#title {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #eea47fff;
+  max-width: 500px;
+  padding: 20px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  font-family: "Roboto", sans-serif;
+  width: 92%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  width: 405px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #00539cff;
+  color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.94);
+}
+
+select {
+  width: 100%;
+  padding: 1rem;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  appearance: none;
+  color: #000000;
+}
+
+select:focus {
+  outline: none;
+  border: 2px solid #0066cc;
+}
+
+::placeholder {
+  color: #777676;
+  font-size: 15px;
+}
+
+.errormessage {
+  visibility: hidden;
+}
+
+[aria-invalid="true"] {
+  outline: 2px solid red;
+}
+
+[aria-invalid="true"] ~ .errormessage {
+  visibility: visible;
+}
+
+[aria-invalid="true"] ~ #toggle-visibility {
+  border: 2px solid red;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.successMessage {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 10px;
+  background-color: #eea47fff;
+  padding: 10px;
+  text-shadow: 1px 1px 0px #333;
+  box-shadow: 2px 2px 5px #888;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+}
+.password-container input {
+  width: 300px;
+  border-radius: 10px 0px 0px 10px;
+}
+#toggle-visibility {
+  background-color: #e4e1e1;
+  color: #333;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 80px;
+  height: 51px;
+}
